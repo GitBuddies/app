@@ -1,8 +1,9 @@
-.App {
+.app {
+  margin: 0;
   text-align: center;
 }
 
-.App-header {
+.app-header {
   background-color: #282c34;
   display: flex;
   flex-direction: column;
@@ -12,9 +13,55 @@
   color: white;
 }
 
-.Search {
+.search-container {
   background-color: #282c34;
+  width: 100%;
   display: flex;
-  min-height: 100vh;
+  align-items: center;
   justify-content: center;
+}
+
+.search-bar-container {
+  width: 100%;
+}
+
+#search-bar {
+  width: 700px;
+  height: 30px;
+  border-radius: 1rem;
+  background-color: #282c34;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1rem;
+  border: white 0.1rem solid;
+  transition: height 0.3s ease;
+  outline: none;
+}
+
+#search-bar:hover, #search-bar:focus, #search-bar:focus-within {
+  border: 2px solid #009688;
+  background-color: black;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.search-bar-container button {
+  padding: 0.5rem;
+  height: 65px;
+  width: 65px;
+  font-size: 1.1rem;
+  border-radius: 1rem;
+  border: white 0.1rem solid;
+  margin-left: 0.5rem;
+  background-color: #282c34;
+}
+
+.search-bar-container button:hover {
+  border: 2px solid #009688;
+  background-color: black;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.search-bar-container button i {
+  color: white;
 }
