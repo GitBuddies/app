@@ -1,10 +1,13 @@
-.app {
+body {
   margin: 0;
+  padding: 0;
+  background-color: #282c34;
   text-align: center;
 }
 
+/* HEADER */
+
 .app-header {
-  background-color: #282c34;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,8 +16,9 @@
   color: white;
 }
 
+/* SEARCH BAR */
+
 .search-container {
-  background-color: #282c34;
   width: 100%;
   display: flex;
   align-items: center;
@@ -26,7 +30,7 @@
 }
 
 #search-bar {
-  width: 700px;
+  width: 75%;
   height: 30px;
   border-radius: 1rem;
   background-color: #282c34;
@@ -60,8 +64,77 @@
   border: 2px solid #009688;
   background-color: black;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 .search-bar-container button i {
   color: white;
+}
+
+/* SEARCH RESULTS CONTAINER */
+
+.search-results-container {
+  border: white 0.1rem solid;
+  border-radius: 1rem;
+  width: 75%;
+  margin: 4rem auto;
+  padding: 20px;
+
+}
+
+.search-results {
+  color: white;
+}
+
+.search-results ul {
+  list-style-type: none;
+}
+
+.search-results li {
+  padding: 2rem;
+  font-size: 1.5rem;
+}
+
+
+/* FOOTER */
+
+.app-footer {
+  background-color: #282c34;
+  color: white;
+  margin: 2rem auto;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  width: 75%;
+}
+
+.app-footer h1 {
+  font-size: calc(20px + 2vmin);
+}
+
+.app-footer p {
+  font-size: calc(5px + 2vmin);
+}
+
+.back-to-top {
+  display: inline-block;
+  background-color: #282c34;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: calc(5px + 2vmin);
+  font-weight: bold;
+  padding: 1rem;
+  border: white 0.1rem solid;
+  transition: height 0.3s ease;
+  outline: none;
+}
+
+.back-to-top:hover {
+  border: 2px solid #009688;
+  background-color: black;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
