@@ -47,7 +47,7 @@ const [searchResults, setSearchResults] = useState([]);
 
   // FUNCTION TO FETCH DATA FROM OPENAI API //
   const fetchOpenAI = async (query) => {
-    const apiKey = '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';
+    const apiKey = '';
     const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
     return fetch(apiUrl, {
