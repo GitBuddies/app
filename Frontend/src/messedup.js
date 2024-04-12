@@ -1,78 +1,90 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
+const OpenAI = require('openai')
 
-const [searchResults, setSearchResults] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
+const openai = new OpenAI({
+  // apiKey: process.env.OPENAI_API_KEY,
+  apiKey: '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'
+});
 
-  useEffect(() => {
-    fetchData();
-  });
+const chatCompletion = openai.chat.completions.create({
+  messages: [{ role: "user", content: "Say this is a test" }],
+  model: "gpt-3.5-turbo",
+});
 
-    // FUNCTION TO REQUEST OPENAI API //
-    const fetchData = async (retryCount = 0) => {
-      try {
-        const response = await fetchOpenAI(searchQuery);
+console.log(chatCompletion)
 
-        // CHECK FOR RATE LIMIT ERROR //
-        if (response.status === 429) {
-          // RATE LIMIT EXCEEDED, PARSE RETRY-AFTER HEADER //
-          const retryAfter = parseInt(response.headers.get('Retry-After')) || 5; // DEFAULT TO 5 SECONDS //
-          console.log(`Rate limit exceeded. Retrying after ${retryAfter} seconds...`);
-          await new Promise(resolve => setTimeout(resolve, retryAfter * 1000));
-          // RETRY THE REQUEST (MAXIMUM OF 5 TIMES) //
-          if (retryCount < 5) {
-            return fetchData(retryCount + 1);
-          } else {
-            console.error('Maximum retry limit reached.');
-            return;
-          }
-        }
+// const [searchResults, setSearchResults] = useState([]);
+//   const [searchQuery, setSearchQuery] = useState('');
 
-        if (!response.ok) {
-          // HANDLE OTHER HTTP ERRORS //
-          console.error('HTTP error:', response.status);
-        }
+//   useEffect(() => {
+//     fetchData();
+//   });
 
-        const data = await response.json();
+//     // FUNCTION TO REQUEST OPENAI API //
+//     const fetchData = async (retryCount = 0) => {
+//       try {
+//         const response = await fetchOpenAI(searchQuery);
 
-        // CHECK IF DATA.CHOICES IS DEFINED BEFORE MAPPING //
-        if (data.choices) {
-          setSearchResults(data.choices.map(choice => choice.message.content));
-        } else {
-          setSearchResults([]); // RESET SEARCH RESULTS IF DATA.CHOICES IS UNDEFINED
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
+//         // CHECK FOR RATE LIMIT ERROR //
+//         if (response.status === 429) {
+//           // RATE LIMIT EXCEEDED, PARSE RETRY-AFTER HEADER //
+//           const retryAfter = parseInt(response.headers.get('Retry-After')) || 5; // DEFAULT TO 5 SECONDS //
+//           console.log(`Rate limit exceeded. Retrying after ${retryAfter} seconds...`);
+//           await new Promise(resolve => setTimeout(resolve, retryAfter * 1000));
+//           // RETRY THE REQUEST (MAXIMUM OF 5 TIMES) //
+//           if (retryCount < 5) {
+//             return fetchData(retryCount + 1);
+//           } else {
+//             console.error('Maximum retry limit reached.');
+//             return;
+//           }
+//         }
 
-  // FUNCTION TO FETCH DATA FROM OPENAI API //
-  const fetchOpenAI = async (query) => {
-    const apiKey = '';
-    const apiUrl = 'https://api.openai.com/v1/chat/completions';
+//         if (!response.ok) {
+//           // HANDLE OTHER HTTP ERRORS //
+//           console.error('HTTP error:', response.status);
+//         }
 
-    return fetch(apiUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify({
-        model: 'gpt-3.5-turbo',
-        messages: [{ role: 'user', content: query }],
-        temperature: 0.7,
-        max_tokens: 50,
-      }),
-    });
-  };
+//         const data = await response.json();
 
-  const handleSubmit = (event) => {
-    event.preventDefault(); // PREVENTS DEFAULT FORM SUBMISSION BEHAVIOR
-    fetchData(); // TRIGGER API REQUEST WHEN FORM IS SUBMITTED
-  };
+//         // CHECK IF DATA.CHOICES IS DEFINED BEFORE MAPPING //
+//         if (data.choices) {
+//           setSearchResults(data.choices.map(choice => choice.message.content));
+//         } else {
+//           setSearchResults([]); // RESET SEARCH RESULTS IF DATA.CHOICES IS UNDEFINED
+//         }
+//       } catch (error) {
+//         console.error('Error fetching data:', error);
+//       }
+//     };
 
-  const handleChange = (event) => {
-    setSearchQuery(event.target.value); // UPDATES SEARCH QUERY STATE AS USER TYPES
-  }
+//   // FUNCTION TO FETCH DATA FROM OPENAI API //
+//   const fetchOpenAI = async (query) => {
+//     const apiUrl = 'https://api.openai.com/v1/chat/completions';
+
+//     return fetch(apiUrl, {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//         'Authorization': `Bearer ${apiKey}`,
+//       },
+//       body: JSON.stringify({
+//         model: 'gpt-3.5-turbo',
+//         messages: [{ role: 'user', content: query }],
+//         temperature: 0.7,
+//         max_tokens: 50,
+//       }),
+//     });
+//   };
+
+//   const handleSubmit = (event) => {
+//     event.preventDefault(); // PREVENTS DEFAULT FORM SUBMISSION BEHAVIOR
+//     fetchData(); // TRIGGER API REQUEST WHEN FORM IS SUBMITTED
+//   };
+
+//   const handleChange = (event) => {
+//     setSearchQuery(event.target.value); // UPDATES SEARCH QUERY STATE AS USER TYPES
+//   }
 
 
   // HTML ADD ONS
