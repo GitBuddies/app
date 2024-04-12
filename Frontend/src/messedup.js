@@ -3,7 +3,7 @@ const OpenAI = require('openai')
 
 const openai = new OpenAI({
   // apiKey: process.env.OPENAI_API_KEY,
-  apiKey: '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'
+  apiKey: ''
 });
 
 const chatCompletion = openai.chat.completions.create({
