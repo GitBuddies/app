@@ -1,8 +1,8 @@
 Ask Fiona and Spencer:
 
-[ ] - Am I merging branches correctly?
-[ ] - Should I do the GitHub API first? or the OpenAI API first? (which is the better way to go about it?)
-[ ] - completely unfamiliar with how to add APIs to certain elements to get the result i want.
-[ ] - For GitHub, I installed Octokit and second guessded myself so I restarted. Was I doing this right?
-[ ] - My "user 1, user 2, user 3, etc." are placeholders...how do i see the styling once the API is in there and a user searches what they are looking for?
-[ ] - do i put the API functions inside the App() function??
+[x] - Am I merging branches correctly?
+[x] - Should I do the GitHub API first? or the OpenAI API first? (which is the better way to go about it?)
+[x] - completely unfamiliar with how to add APIs to certain elements to get the result i want.
+[x] - For GitHub, I installed Octokit and second guessded myself so I restarted. Was I doing this right?
+[x] - My "user 1, user 2, user 3, etc." are placeholders...how do i see the styling once the API is in there and a user searches what they are looking for?
+[x] - do i put the API functions inside the App() function??
