@@ -1,9 +1,8 @@
 function User({account}) {
 
-    const {username, name, email, top_projects} = account // Destructuring
+    const {username, name, email, top_projects} = account // Destructuring //
+    // console.log(top_projects)
 
-
-console.log(top_projects)
     return (
         <div>
             <p>{username}</p>
@@ -15,11 +14,9 @@ console.log(top_projects)
                     <p>{name}</p>
                     <p>{link}</p>
                 </div>
-
-            ))}
+                ))}
             </div>
         </div>
     )
 }
-
 export default User
