@@ -1,7 +1,8 @@
 import './App.css';
+import Header from './Header';
 import GithubUsers from './Hooks/gitHubApi'
-import Footer from './Footer.jsx'
 import Users from './Users'
+import Footer from './Footer.jsx'
 
 function App() {
 
@@ -110,10 +111,8 @@ function App() {
 
   return (
     <div className="app">
-      <header className="app-header" id='app-header'>
-        <h1>GitBuddies</h1>
-        <p>Connecting Coders, Powering Progress</p>
-      </header>
+
+      <Header />
 
       <GithubUsers />
 
