@@ -1,6 +1,5 @@
 import './App.css';
 import Header from './Header';
-import GithubUsers from './Hooks/gitHubApi'
 import Users from './Users'
 import Footer from './Footer.jsx'
 
@@ -113,8 +112,6 @@ function App() {
     <div className="app">
 
       <Header />
-
-      <GithubUsers />
 
       <Users accounts={accounts} />
 

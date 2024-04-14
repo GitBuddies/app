@@ -1,14 +1,15 @@
-import User from './User'
+import User from './User';
+import GithubUsers from './Hooks/gitHubApi';
 
 function Users({accounts}) {
 // console.log(accounts)
     return (
-        <div className="search-results-container">
-            <div className="search-results">
-                {accounts.map((account)=> (
+        <div>
+                {/* {accounts.map((account)=> (
                     <User account={account} />
-                ))}
-            </div>
+                ))} */}
+                <GithubUsers />
+
         </div>
     )
 }
