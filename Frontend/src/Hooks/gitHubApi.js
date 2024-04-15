@@ -10,8 +10,8 @@ const GithubUsers = () => {
     const fetchGithubUsers = async () => {
         try {
             const response = await fetch(`https://api.github.com/search/users?q=language:${language}`, {
-            headers: {
-            Authorization: `Basic ${btoa(`${username}:${token}`)}`
+                headers: {
+                    Authorization: `Basic ${btoa(`${username}:${token}`)}`
             }
         });
         if (!response.ok) {
@@ -20,7 +20,7 @@ const GithubUsers = () => {
         const data = await response.json();
         setUsers(data.items);
         } catch (error) {
-        console.error('Error:', error);
+            console.error('Error:', error);
         }
     };
 
@@ -43,11 +43,11 @@ const GithubUsers = () => {
                 {/* <h3>Search Results:</h3> */}
                 <ul className='search-results'>
                     {users.map(user => (
-                        <li key={user.id}>
-                            <a href={user.html_url} target="_blank" rel="noopener noreferrer">
-                                {user.login}
-                            </a>
-                        </li>
+                            <li key={user.id}>
+                                <a href={user.html_url} target="_blank" rel="noopener noreferrer">
+                                    {user.login}
+                                </a>
+                            </li>
                     ))}
                 </ul>
             </div>
