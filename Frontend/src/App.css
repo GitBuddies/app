@@ -83,7 +83,6 @@ body {
 
 .search-results-container h3 {
   color: white;
-  border-bottom: rgb(0, 0, 0) 0.5rem solid;
   padding-bottom: 1rem;
 }
 
@@ -101,7 +100,7 @@ body {
   font-size: calc(5px + 2vmin);
   display: flex;
   text-decoration: none;
-  justify-content: left;;
+  justify-content: left;
 }
 
 .search-results li a {

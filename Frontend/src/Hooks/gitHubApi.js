@@ -40,7 +40,7 @@ const GithubUsers = () => {
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
             <div className='search-results-container'>
-                {/* <h3>Search Results:</h3> */}
+                <h3>Search Results:</h3>
                 <ul className='search-results'>
                     {users.map(user => (
                             <li key={user.id}>
